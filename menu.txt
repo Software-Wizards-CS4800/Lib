@@ -1,0 +1,25 @@
+============================================================
+                          MENU
+============================================================
+
+Morning:
+------------------------------------------------------------
+- Scrambled Eggs
+- Toast with Butter and Jam
+- Fresh Orange Juice
+- Coffee
+
+Noon:
+------------------------------------------------------------
+- Grilled Chicken Sandwich
+- Caesar Salad
+- Iced Tea
+- Fruit Salad
+
+Evening:
+------------------------------------------------------------
+- Spaghetti Bolognese
+- Garlic Bread
+- Green Salad
+- Red Wine
+- Chocolate Cake

@@ -1,0 +1,40 @@
+============================================================
+                          BUS INFORMATION
+============================================================
+
+Route Number: 101
+Start Point : Downtown
+End Point   : Uptown
+------------------------------------------------------------
+Departure Time : 08:00 AM
+Arrival Time   : 09:30 AM
+Days of Operation: Monday to Friday
+------------------------------------------------------------
+Time Table:
+------------------------------------------------------------
+Stop                | Arrival Time   | Departure Time
+------------------------------------------------------------
+Downtown            | 08:00 AM       | 08:05 AM
+Central Station     | 08:20 AM       | 08:25 AM
+City Mall           | 08:45 AM       | 08:50 AM
+Green Park          | 09:10 AM       | 09:15 AM
+Uptown              | 09:30 AM       | ---
+------------------------------------------------------------
+
+Route Number: 202
+Start Point : Central Station
+End Point   : Eastside
+------------------------------------------------------------
+Departure Time : 10:00 AM
+Arrival Time   : 11:15 AM
+Days of Operation: Saturday and Sunday
+------------------------------------------------------------
+Time Table:
+------------------------------------------------------------
+Stop                | Arrival Time   | Departure Time
+------------------------------------------------------------
+Central Station     | 10:00 AM       | 10:05 AM
+North Park          | 10:20 AM       | 10:25 AM
+River Side          | 10:40 AM       | 10:45 AM
+Eastside            | 11:15 AM       | ---
+------------------------------------------------------------
