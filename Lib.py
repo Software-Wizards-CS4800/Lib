@@ -7,14 +7,25 @@ TRANSPORTATION_FILE = 'tran_system.txt'
 MENU_FILE = 'menu.txt'
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"  # Define the date format used in the file
 
+"""
+Ask if the account exists
+If yes, enter the account and password in account.txt to log in
+If no, go to create a new account
+"""
 def ask_for_account():
     return input("Do you have an account? (yes/no): ").strip().lower()
 
+"""
+Requires you to enter your account and password and save them for use in other functions
+"""
 def get_account_info():
     account = input("Enter your account: ").strip()
     password = input("Enter your password: ").strip()
     return account, password
 
+"""
+Based on the provided account and password, search for the corresponding line in account.txt
+"""
 def verify_account(account, password):
     if not os.path.exists(ACCOUNT_FILE):
         return False
@@ -25,6 +36,9 @@ def verify_account(account, password):
                 return True
     return False
 
+"""
+Check if the account has been registered
+"""
 def check_duplicate_account(account):
     if not os.path.exists(ACCOUNT_FILE):
         return False
@@ -35,21 +49,30 @@ def check_duplicate_account(account):
                 return True
     return False
 
+"""
+According to the input account and password, write to the storage file in the form of "account password"
+"""
 def create_account():
     while True:
-        new_account = input("Enter a new account name: (No spaces in between)").strip()
+        new_account = input("Enter a new account name(No spaces in between): ").strip()
         if check_duplicate_account(new_account):
             print("Account name already exists. Please enter a different account name.")
         else:
             break
-    new_password = input("Enter a new password: (No spaces in between)").strip()
+    new_password = input("Enter a new password(No spaces in between): ").strip()
     with open(ACCOUNT_FILE, 'a') as file:
         file.write(f"{new_account} {new_password}\n")
     print("Account created successfully.")
 
+"""
+Get the keywords of the corresponding function
+"""
 def prompt_for_function():
     return input("What function do you need? (check, make reservation, transportation information, food menu): ").strip().lower()
 
+"""
+Check the expiration time of all rooms, if they have expired, change them to NONE
+"""
 def check_library():
     if not os.path.exists(LIBRARY_FILE):
         print("Library file not found.")
@@ -77,6 +100,14 @@ def check_library():
             print(f"{room_name} | {reservation_status} | {reservation_person} | {reservation_expiration_time}")
             file.write(f"{room_name} {reservation_status} {reservation_person} {reservation_expiration_time}\n")
 
+"""
+First, check the status of all rooms
+Show all the rooms and ask for the room you like
+After selecting, give different responses based on the status of the selected room
+Continuously adjust due to restrictions on room status and reservation time
+Ask for reservation time and duration
+Modify stored document
+"""
 def make_reservation(logged_in_user):
     while True:
         check_library()
@@ -139,6 +170,9 @@ def make_reservation(logged_in_user):
     print("Reservation successful.")
     return
 
+"""
+Show the contents of the traffic information file
+"""
 def display_transportation_information():
     if not os.path.exists(TRANSPORTATION_FILE):
         print("Transportation information file not found.")
@@ -148,6 +182,9 @@ def display_transportation_information():
         for line in file:
             print(line.strip())
 
+"""
+Show the contents of the menu document
+"""
 def display_menu():
     if not os.path.exists(MENU_FILE):
         print("Menu file not found.")
@@ -157,6 +194,13 @@ def display_menu():
         for line in file:
             print(line.strip())
 
+"""
+Ask for account
+Try to log in
+Ask for function keywords
+Direct to different functions
+Ask whether to stay in the main menu
+"""
 def main():
     user_response = ask_for_account()
     if user_response == 'yes':
