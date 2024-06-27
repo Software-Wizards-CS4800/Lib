@@ -156,7 +156,7 @@ def make_reservation(logged_in_user):
             if 1 <= reserve_duration < 5:
                 break
             else:
-                print("Reservation duration must be an integer less than 5 hours. Please re-enter.")
+                print("Reservation duration must be an integer less than 5 hours and at least 1 hour. Please re-enter.")
         except ValueError:
             print("Invalid input. Please enter an integer.")
 
