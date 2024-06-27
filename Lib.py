@@ -150,7 +150,7 @@ def make_reservation(logged_in_user):
             print("Invalid date format. Please re-enter.")
 
     while True:
-        reserve_duration_str = input("How many hours do you want to reserve? (must be less than 5 hours and greater than 0, and can only be entered as an integer in hours): ").strip()
+        reserve_duration_str = input("How many hours do you want to reserve? (must be an integer less than 5 hours and at least 1 hour, and can only be entered as an integer in hours): ").strip()
         try:
             reserve_duration = int(reserve_duration_str)
             if 1 <= reserve_duration < 5:
